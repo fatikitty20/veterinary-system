@@ -1,0 +1,82 @@
+# 🐾 Veterinary System
+
+Sistema web de gestión para una clínica veterinaria. Permite administrar clientes, mascotas, servicios y cuentas desde un panel con inicio de sesión y roles de usuario.
+
+## ✨ Características
+
+- Gestión de clientes y mascotas
+- Registro y edición de servicios
+- Control de cuentas y roles
+- Inicio de sesión con permisos por usuario
+- Panel de atención para recepción y administración
+- Estructura MVC con Vista / Controlador / Modelo
+
+## 🛠️ Stack
+
+| Área | Tecnologías |
+|---|---|
+| Frontend | HTML5, CSS3, JavaScript |
+| Backend / BD | Supabase (PostgreSQL + API) |
+| Arquitectura | MVC |
+| Despliegue | Netlify |
+
+## 📁 Estructura del proyecto
+
+```text
+.
+├── Vista/
+├── controlador/
+├── modelo/
+├── README.md
+└── netlify.toml
+```
+
+## 🗄️ Modelo de datos
+
+Tablas principales en Supabase:
+
+- `clientes`
+- `mascotas`
+- `razas`
+- `servicios`
+- `cuenta`
+- `usuarios`
+- `roles`
+
+## 🚀 Cómo ejecutarlo
+
+1. Clona el repositorio.
+2. Crea un proyecto en Supabase.
+3. Configura las tablas y activa las políticas de seguridad `RLS`.
+4. Edita `controlador/config.js` con tu URL y tu `anon` key.
+5. Sirve la carpeta `Vista/` o despliega en Netlify.
+
+```js
+const SUPABASE_URL = 'https://TU-PROYECTO.supabase.co';
+const SUPABASE_ANON_KEY = 'TU_CLAVE_ANON';
+```
+
+> 🔒 Importante: en Supabase, activa Row Level Security (RLS) para proteger los datos. La `anon` key es pública por diseño; nunca subas la `service_role` key.
+
+## ☁️ Despliegue
+
+El proyecto incluye una configuración mínima para Netlify.
+
+```toml
+[build]
+  publish = "Vista"
+  command = "echo 'No build step required'"
+```
+
+Conecta el repositorio en Netlify y elige la carpeta `Vista` como directorio de publicación.
+
+## 🧭 Próximos pasos
+
+- Agenda de citas
+- Historial clínico por mascota
+- Reportes y facturación
+- Pruebas automáticas
+
+## 👩‍💻 Autora
+
+**fatikitty20** · [GitHub](https://github.com/fatikitty20)
